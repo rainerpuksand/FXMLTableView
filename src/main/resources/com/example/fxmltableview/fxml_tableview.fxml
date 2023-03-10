@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import com.example.fxmltableview.*?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane alignment="CENTER" hgap="10.0" vgap="10.0"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.example.fxmltableview.FXMLTableViewController">
+<padding>
+    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+</padding>
+<Label style="-fx-font: NORMAL 20 Tahoma;" text="Phonebook"
+       GridPane.columnIndex="0" GridPane.rowIndex="0">
+</Label>
+
+
+    <TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <columns>
+            <TableColumn text="First Name">
+                <cellValueFactory><PropertyValueFactory property="firstName" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Last Name">
+                <cellValueFactory><PropertyValueFactory property="lastName" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Phone number">
+                <cellValueFactory><PropertyValueFactory property="phone number" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <Person firstName="Jacob" lastName="Smith"
+                        phoneNumber="46465456464"/>
+                <Person firstName="Isabella" lastName="Johnson"
+                        phoneNumber="6565235644"/>
+                <Person firstName="Ethan" lastName="Williams"
+                        phoneNumber="5454512313"/>
+                <Person firstName="Emma" lastName="Jones"
+                        phoneNumber="8779464131"/>
+                <Person firstName="Michael" lastName="Brown"
+                        phoneNumber="315646466"/>
+            </FXCollections>
+        </items>
+    </TableView>
+</GridPane>
